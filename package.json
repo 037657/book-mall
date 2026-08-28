@@ -1,0 +1,20 @@
+{
+  "name": "book-mall",
+  "version": "1.0.0",
+  "private": true,
+  "description": "图书借阅与购买一体化网站（Vue3 + Express + SQLite）",
+  "workspaces": [
+    "server",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,frontend -c blue,green \"npm run dev -w server\" \"npm run dev -w frontend\"",
+    "dev:server": "npm run dev -w server",
+    "dev:frontend": "npm run dev -w frontend",
+    "seed": "npm run seed -w server",
+    "build": "npm run build -w frontend"
+  },
+  "devDependencies": {
+    "concurrently": "^9.0.1"
+  }
+}
